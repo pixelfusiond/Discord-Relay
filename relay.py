@@ -16,7 +16,7 @@ async def on_ready():
     for channel_id in SPY_CHANNELS:
         print(f" - {client.get_channel(channel_id)}")
 
-    embed = discord.Embed(title="Discord relay completely started")
+    embed = discord.Embed(title="Discord relay started")
     channels = '\n'.join([client.get_channel(channel_id).name for channel_id in SPY_CHANNELS])
     embed.add_field(name="Channels observed:", value=channels)
     await send_embed_through_webhook(embed)
@@ -45,11 +45,11 @@ async def send_embed_through_webhook(embed: discord.Embed, *, member_mimic: disc
         webhook = discord.Webhook.from_url(WEBHOOK_URL, session=session)
 
         if member_mimic is None:
-            username = "Server Relay"
-            avatar_url = None
+            username = "Plex Errors"
+            avatar_url = https://cdn.discordapp.com/attachments/1198953551376953386/1198973960671477840/post-transparent.png?ex=65c0da84&is=65ae6584&hm=d08032502de0a852f0740e93f9cf19d7bb925abe6276b00ddf4e2074b41d009d&
         else:
-            username =  member_mimic.display_name
-            avatar_url = member_mimic.display_avatar.url
+            username = "Plex Errors"
+            avatar_url = https://cdn.discordapp.com/attachments/1198953551376953386/1198973960671477840/post-transparent.png?ex=65c0da84&is=65ae6584&hm=d08032502de0a852f0740e93f9cf19d7bb925abe6276b00ddf4e2074b41d009d&
 
         await webhook.send(username=username, avatar_url=avatar_url, embed=embed)
 
